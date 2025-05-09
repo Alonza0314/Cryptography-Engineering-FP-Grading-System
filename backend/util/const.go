@@ -1,0 +1,5 @@
+package util
+
+const (
+	JWT_SECRET_KEY = "CRYPTOGRAPHY_ENGINEERING"
+)

@@ -4,6 +4,8 @@ import (
 	loggergo "github.com/Alonza0314/logger-go"
 )
 
+var Log *Logger
+
 type Logger struct {
 	*loggergo.FileLogger
 }

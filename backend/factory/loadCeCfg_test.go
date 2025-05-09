@@ -19,6 +19,9 @@ var testCasesLoadCeCfg = []struct {
 				FileDir:   "./logs",
 				DebugMode: true,
 			},
+			Gin: factory.GinCfg{
+				Port: "31413",
+			},
 		},
 	},
 }
