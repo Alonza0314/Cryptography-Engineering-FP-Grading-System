@@ -159,3 +159,11 @@ func InsertGroup(group *model.Group) error {
 func DeleteGroup(bigGroupName string, groupId int) error {
 	return Db.DeleteOne(mongo.GROUP_COLLECTION, bson.M{"big_group": bigGroupName, "group_id": groupId})
 }
+
+func InsertGroupGradeComment(groupGradeComment *model.GroupGradeComment) error {
+	return Db.InsertOne(mongo.GROUP_GRADE_COMMENT_COLLECTION, groupGradeComment)
+}
+
+func DeleteGroupGradeComment(bigGroupName string, groupId int) error {
+	return Db.DeleteOne(mongo.GROUP_GRADE_COMMENT_COLLECTION, bson.M{"big_group": bigGroupName, "group_id": groupId})
+}

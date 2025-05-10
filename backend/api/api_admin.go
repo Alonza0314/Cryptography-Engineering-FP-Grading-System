@@ -343,6 +343,16 @@ func handleAdminAddGroup(c *gin.Context, request model.AdminAddGroupRequest) {
 		return
 	}
 
+	if err = InsertGroupGradeComment(&model.GroupGradeComment{
+		BigGroup:              request.BigGroup,
+		GroupId:               request.GroupId,
+		GroupGradeCommentList: make([]model.GroupGradeCommentItem, 0),
+	}); err != nil {
+		Log.Error("API ADMIN", "failed to insert group grade comment: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
 	c.JSON(http.StatusOK, gin.H{"message": "group added successfully"})
 }
 
@@ -362,6 +372,12 @@ func handleAdminDeleteGroup(c *gin.Context, request model.AdminDeleteGroupReques
 
 	if err = DeleteGroup(request.BigGroup, request.GroupId); err != nil {
 		Log.Error("API ADMIN", "failed to delete group: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	if err = DeleteGroupGradeComment(request.BigGroup, request.GroupId); err != nil {
+		Log.Error("API ADMIN", "failed to delete group grade comment: "+err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
