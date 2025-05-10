@@ -1,0 +1,11 @@
+logger:
+  fileDir: ./logs
+  debugMode: true
+
+gin:
+  port: 31413
+
+admin:
+  ta:
+    - ta_id: "123456789"
+      ta_password: "123456789"
