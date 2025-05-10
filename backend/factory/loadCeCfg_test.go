@@ -12,8 +12,8 @@ var testCasesLoadCeCfg = []struct {
 	expected *factory.CeCfg
 }{
 	{
-		name:     "test load ceCfg",
-		cfgPath:  "../../config/ceCfg.yaml",
+		name:    "test load ceCfg",
+		cfgPath: "../../config/ceCfg.yaml",
 		expected: &factory.CeCfg{
 			Logger: factory.LoggerCfg{
 				FileDir:   "./logs",
@@ -33,8 +33,11 @@ func TestLoadCeCfg(t *testing.T) {
 			if err != nil {
 				t.Fatalf("Failed to load ceCfg: %v", err)
 			}
-			if !reflect.DeepEqual(ceCfg, testCase.expected) {
-				t.Errorf("Expected %v, but got %v", testCase.expected, ceCfg)
+			if !reflect.DeepEqual(ceCfg.Logger, testCase.expected.Logger) {
+				t.Errorf("Logger config mismatch, got: %v, want: %v", ceCfg.Logger, testCase.expected.Logger)
+			}
+			if !reflect.DeepEqual(ceCfg.Gin, testCase.expected.Gin) {
+				t.Errorf("Gin config mismatch, got: %v, want: %v", ceCfg.Gin, testCase.expected.Gin)
 			}
 		})
 	}

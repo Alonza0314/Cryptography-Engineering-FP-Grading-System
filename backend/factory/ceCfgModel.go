@@ -3,6 +3,7 @@ package factory
 type CeCfg struct {
 	Logger LoggerCfg `yaml:"logger" binding:"required"`
 	Gin    GinCfg    `yaml:"gin" binding:"required"`
+	Admin  AdminCfg  `yaml:"admin" binding:"required"`
 }
 
 type LoggerCfg struct {
@@ -12,4 +13,8 @@ type LoggerCfg struct {
 
 type GinCfg struct {
 	Port string `yaml:"port" binding:"required"`
+}
+
+type AdminCfg struct {
+	Ta []string `yaml:"ta" binding:"required"`
 }
