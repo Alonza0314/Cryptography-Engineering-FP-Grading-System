@@ -29,6 +29,15 @@ type AdminGetGroupsResponse struct {
 	Groups []Group `json:"groups" binding:"required"`
 }
 
+type AdminGetGroupRequest struct {
+	BigGroup string `json:"big_group" binding:"required"`
+	GroupId  int    `json:"group_id" binding:"required"`
+}
+
+type AdminGetGroupResponse struct {
+	GroupGradeCommentList `json:"group_grade_comment_list" binding:"required"`
+}
+
 type AdminAddGroupRequest struct {
 	Group
 }

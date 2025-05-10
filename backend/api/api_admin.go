@@ -134,6 +134,35 @@ func ApiAdminGetGroups(c *gin.Context) {
 	Log.Info("API ADMIN", "get groups end")
 }
 
+func ApiAdminGetGroup(c *gin.Context) {
+	Log.Info("API ADMIN", "get group start")
+
+	jwtToken := c.GetHeader("Authorization")
+	if jwtToken == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "missing authorization header",
+		})
+		return
+	}
+	valid, _, err := util.VerifyJwtToken(jwtToken)
+	if err != nil || !valid {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "invalid token",
+		})
+		return
+	}
+
+	var request model.AdminGetGroupRequest
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	handleAdminGetGroup(c, request)
+
+	Log.Info("API ADMIN", "get group end")
+}
+
 func ApiAdminAddGroup(c *gin.Context) {
 	Log.Info("API ADMIN", "add group start")
 
@@ -308,6 +337,21 @@ func handleAdminGetGroups(c *gin.Context, request model.AdminGetGroupsRequest) {
 	}
 	for i, group := range groups {
 		response.Groups[i] = *group
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+func handleAdminGetGroup(c *gin.Context, request model.AdminGetGroupRequest) {
+	groupGradeComment, err := GetGroupGradeComment(request.BigGroup, request.GroupId)
+	if err != nil {
+		Log.Error("API ADMIN", "failed to get group grade comment: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	response := model.AdminGetGroupResponse{
+		GroupGradeCommentList: groupGradeComment.GroupGradeCommentList,
 	}
 
 	c.JSON(http.StatusOK, response)

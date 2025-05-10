@@ -170,6 +170,30 @@ func DeleteGroup(bigGroupName string, groupId int) error {
 	return Db.DeleteOne(mongo.GROUP_COLLECTION, bson.M{"big_group": bigGroupName, "group_id": groupId})
 }
 
+func GetGroupGradeComment(bigGroupName string, groupId int) (*model.GroupGradeComment, error) {
+	filter := bson.M{"big_group": bigGroupName, "group_id": groupId}
+	result, err := Db.GetOne(mongo.GROUP_GRADE_COMMENT_COLLECTION, filter)
+	if err != nil {
+		if strings.Contains(err.Error(), "no documents in result") {
+			return nil, nil
+		}
+		return nil, err
+	}
+
+	data, err := bson.Marshal(result)
+	if err != nil {
+		return nil, err
+	}
+
+	var groupGradeComment model.GroupGradeComment
+	err = bson.Unmarshal(data, &groupGradeComment)
+	if err != nil {
+		return nil, err
+	}
+
+	return &groupGradeComment, nil
+}
+
 func InsertGroupGradeComment(groupGradeComment *model.GroupGradeComment) error {
 	return Db.InsertOne(mongo.GROUP_GRADE_COMMENT_COLLECTION, groupGradeComment)
 }
