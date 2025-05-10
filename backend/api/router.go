@@ -121,4 +121,16 @@ var routes = []route{
 		Pattern:     "/user/totp",
 		HandlerFunc: ApiUserTOTP,
 	},
+	{
+		Name:        "User Get Big Groups",
+		Method:      http.MethodGet,
+		Pattern:     "/user/group/big",
+		HandlerFunc: ApiUserGetBigGroups,
+	},
+	{
+		Name:        "User Get Groups",
+		Method:      http.MethodGet,
+		Pattern:     "/user/group",
+		HandlerFunc: ApiUserGetGroups,
+	},
 }

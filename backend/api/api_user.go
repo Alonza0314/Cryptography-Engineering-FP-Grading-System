@@ -108,6 +108,58 @@ func ApiUserTOTP(c *gin.Context) {
 	Log.Info("API USER", "totp end")
 }
 
+func ApiUserGetBigGroups(c *gin.Context) {
+	Log.Info("API USER", "get big groups start")
+
+	jwtToken := c.GetHeader("Authorization")
+	if jwtToken == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "missing authorization header",
+		})
+		return
+	}
+	valid, _, err := util.VerifyJwtToken(jwtToken)
+	if err != nil || !valid {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "invalid token",
+		})
+		return
+	}
+
+	handleUserGetBigGroups(c)
+
+	Log.Info("API USER", "get big groups end")
+}
+
+func ApiUserGetGroups(c *gin.Context) {
+	Log.Info("API USER", "get groups start")
+
+	jwtToken := c.GetHeader("Authorization")
+	if jwtToken == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "missing authorization header",
+		})
+		return
+	}
+	valid, _, err := util.VerifyJwtToken(jwtToken)
+	if err != nil || !valid {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "invalid token",
+		})
+		return
+	}
+
+	var request model.UserGetGroupsRequest
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	handleUserGetGroups(c, request.BigGroup)
+
+	Log.Info("API USER", "get groups end")
+}
+
 func handleUserLogin(c *gin.Context, request model.UserLoginRequest) {
 	userAccount, err := GetUserAccount(request.StudentId)
 	if err != nil {
@@ -173,24 +225,21 @@ func handleUserTOTPInitBegin(c *gin.Context, studentId string) {
 		Totp:      false,
 		SecretKey: key.Secret(),
 	}
-	if tgtUserAccount, err := GetUserAccount(studentId); tgtUserAccount != nil {
-		if err != nil {
-			Log.Error("API USER", "failed to get user account: "+err.Error())
+	if tgtUserAccount, err := GetUserAccount(studentId); err != nil {
+		Log.Error("API USER", "failed to get user account: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	} else if tgtUserAccount != nil {
+		if err = UpdateUserAccount(&userAccount); err != nil {
+			Log.Error("API USER", "failed to update user account: "+err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
 		}
-		if tgtUserAccount != nil {
-			if err = UpdateUserAccount(&userAccount); err != nil {
-				Log.Error("API USER", "failed to update user account: "+err.Error())
-				c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-				return
-			}
-		} else {
-			if err = InsertUserAccount(&userAccount); err != nil {
-				Log.Error("API USER", "failed to insert user account: "+err.Error())
-				c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-				return
-			}
+	} else {
+		if err = InsertUserAccount(&userAccount); err != nil {
+			Log.Error("API USER", "failed to insert user account: "+err.Error())
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
 		}
 	}
 
@@ -303,6 +352,42 @@ func handleUserTOTP(c *gin.Context, studentId string, code string) {
 
 	response := model.UserTOTPResponse{
 		JwtToken: jwtToken,
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+func handleUserGetBigGroups(c *gin.Context) {
+	bigGroups, err := GetBigGroups()
+	if err != nil {
+		Log.Error("API USER", "failed to get big groups: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	response := model.UserGetBigGroupsResponse{
+		BigGroups: make([]string, len(bigGroups)),
+	}
+	for i, bigGroup := range bigGroups {
+		response.BigGroups[i] = bigGroup.BigGroup
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+func handleUserGetGroups(c *gin.Context, bigGroup string) {
+	groups, err := GetGroups(bigGroup)
+	if err != nil {
+		Log.Error("API USER", "failed to get groups: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	response := model.UserGetGroupsResponse{
+		Groups: make([]model.Group, len(groups)),
+	}
+	for i, group := range groups {
+		response.Groups[i] = *group
 	}
 
 	c.JSON(http.StatusOK, response)

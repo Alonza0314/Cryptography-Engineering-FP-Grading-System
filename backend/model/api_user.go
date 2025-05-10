@@ -24,3 +24,15 @@ type UserTOTPRequest struct {
 type UserTOTPResponse struct {
 	JwtToken string `json:"jwt_token" binding:"required"`
 }
+
+type UserGetBigGroupsResponse struct {
+	BigGroups []string `json:"big_groups" binding:"required"`
+}
+
+type UserGetGroupsRequest struct {
+	BigGroup string `json:"big_group" binding:"required"`
+}
+
+type UserGetGroupsResponse struct {
+	Groups []Group `json:"groups" binding:"required"`
+}
