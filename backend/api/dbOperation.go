@@ -10,7 +10,7 @@ import (
 
 func GetUserAccount(studentId string) (*model.UserAccount, error) {
 	filter := bson.M{"student_id": studentId}
-	result, err := mongo.GetOne(mongo.USER_ACCOUNT_COLLECTION, filter)
+	result, err := Db.GetOne(mongo.USER_ACCOUNT_COLLECTION, filter)
 	if err != nil {
 		if strings.Contains(err.Error(), "no documents in result") {
 			return nil, nil
@@ -33,16 +33,16 @@ func GetUserAccount(studentId string) (*model.UserAccount, error) {
 }
 
 func InsertUserAccount(userAccount *model.UserAccount) error {
-	return mongo.InsertOne(mongo.USER_ACCOUNT_COLLECTION, userAccount)
+	return Db.InsertOne(mongo.USER_ACCOUNT_COLLECTION, userAccount)
 }
 
 func UpdateUserAccount(userAccount *model.UserAccount) error {
-	return mongo.UpdateOne(mongo.USER_ACCOUNT_COLLECTION, bson.M{"student_id": userAccount.StudentId}, bson.M{"$set": userAccount})
+	return Db.UpdateOne(mongo.USER_ACCOUNT_COLLECTION, bson.M{"student_id": userAccount.StudentId}, bson.M{"$set": userAccount})
 }
 
 func GetBigGroups() ([]*model.BigGroup, error) {
 	filter := bson.M{}
-	cursor, err := mongo.GetAll(mongo.BIG_GROUP_COLLECTION, filter)
+	cursor, err := Db.GetAll(mongo.BIG_GROUP_COLLECTION, filter)
 	if err != nil {
 		if strings.Contains(err.Error(), "no documents in result") {
 			return nil, nil
@@ -70,7 +70,7 @@ func GetBigGroups() ([]*model.BigGroup, error) {
 
 func GetBigGroup(bigGroupName string) (*model.BigGroup, error) {
 	filter := bson.M{"big_group": bigGroupName}
-	result, err := mongo.GetOne(mongo.BIG_GROUP_COLLECTION, filter)
+	result, err := Db.GetOne(mongo.BIG_GROUP_COLLECTION, filter)
 	if err != nil {
 		if strings.Contains(err.Error(), "no documents in result") {
 			return nil, nil
@@ -93,16 +93,16 @@ func GetBigGroup(bigGroupName string) (*model.BigGroup, error) {
 }
 
 func InsertBigGroup(bigGroupName string) error {
-	return mongo.InsertOne(mongo.BIG_GROUP_COLLECTION, model.BigGroup{BigGroup: bigGroupName})
+	return Db.InsertOne(mongo.BIG_GROUP_COLLECTION, model.BigGroup{BigGroup: bigGroupName})
 }
 
 func DeleteBigGroup(bigGroupName string) error {
-	return mongo.DeleteOne(mongo.BIG_GROUP_COLLECTION, bson.M{"big_group": bigGroupName})
+	return Db.DeleteOne(mongo.BIG_GROUP_COLLECTION, bson.M{"big_group": bigGroupName})
 }
 
 func GetGroups(bigGroupName string) ([]*model.Group, error) {
 	filter := bson.M{"big_group": bigGroupName}
-	cursor, err := mongo.GetAll(mongo.GROUP_COLLECTION, filter)
+	cursor, err := Db.GetAll(mongo.GROUP_COLLECTION, filter)
 	if err != nil {
 		if strings.Contains(err.Error(), "no documents in result") {
 			return nil, nil
@@ -130,7 +130,7 @@ func GetGroups(bigGroupName string) ([]*model.Group, error) {
 
 func GetGroup(bigGroupName string, groupId int) (*model.Group, error) {
 	filter := bson.M{"big_group": bigGroupName, "group_id": groupId}
-	result, err := mongo.GetOne(mongo.GROUP_COLLECTION, filter)
+	result, err := Db.GetOne(mongo.GROUP_COLLECTION, filter)
 	if err != nil {
 		if strings.Contains(err.Error(), "no documents in result") {
 			return nil, nil
@@ -153,9 +153,9 @@ func GetGroup(bigGroupName string, groupId int) (*model.Group, error) {
 }
 
 func InsertGroup(group *model.Group) error {
-	return mongo.InsertOne(mongo.GROUP_COLLECTION, group)
+	return Db.InsertOne(mongo.GROUP_COLLECTION, group)
 }
 
 func DeleteGroup(bigGroupName string, groupId int) error {
-	return mongo.DeleteOne(mongo.GROUP_COLLECTION, bson.M{"big_group": bigGroupName, "group_id": groupId})
+	return Db.DeleteOne(mongo.GROUP_COLLECTION, bson.M{"big_group": bigGroupName, "group_id": groupId})
 }

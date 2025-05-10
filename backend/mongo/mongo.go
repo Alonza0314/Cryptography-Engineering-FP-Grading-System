@@ -8,22 +8,30 @@ import (
 	"go.mongodb.org/mongo-driver/v2/mongo/options"
 )
 
-func GetOne(collectionName string, filter interface{}) (interface{}, error) {
+type Mongo struct {
+	client *mongo.Client
+	db     *mongo.Database
+}
+
+func NewMongo() (*Mongo, error) {
 	client, err := mongo.Connect(options.Client().ApplyURI(HOST))
 	if err != nil {
 		return nil, err
 	}
+	return &Mongo{
+		client: client,
+		db:     client.Database(DB),
+	}, nil
+}
 
-	db := client.Database(DB)
-	collection := db.Collection(collectionName)
+func (m *Mongo) GetOne(collectionName string, filter interface{}) (interface{}, error) {
+	collection := m.db.Collection(collectionName)
 	if collection == nil {
-		if err = db.CreateCollection(context.TODO(), collectionName); err != nil {
-			return nil, err
-		}
+		return nil, errors.New("collection not found")
 	}
 
 	var result interface{}
-	err = collection.FindOne(context.TODO(), filter).Decode(&result)
+	err := collection.FindOne(context.TODO(), filter).Decode(&result)
 	if err != nil {
 		return nil, err
 	}
@@ -31,14 +39,8 @@ func GetOne(collectionName string, filter interface{}) (interface{}, error) {
 	return result, nil
 }
 
-func GetAll(collectionName string, filter interface{}) ([]interface{}, error) {
-	client, err := mongo.Connect(options.Client().ApplyURI(HOST))
-	if err != nil {
-		return nil, err
-	}
-
-	db := client.Database(DB)
-	collection := db.Collection(collectionName)
+func (m *Mongo) GetAll(collectionName string, filter interface{}) ([]interface{}, error) {
+	collection := m.db.Collection(collectionName)
 	if collection == nil {
 		return nil, errors.New("collection not found")
 	}
@@ -57,21 +59,13 @@ func GetAll(collectionName string, filter interface{}) ([]interface{}, error) {
 	return results, nil
 }
 
-func InsertOne(collectionName string, data interface{}) error {
-	client, err := mongo.Connect(options.Client().ApplyURI(HOST))
-	if err != nil {
-		return err
-	}
-
-	db := client.Database(DB)
-	collection := db.Collection(collectionName)
+func (m *Mongo) InsertOne(collectionName string, data interface{}) error {
+	collection := m.db.Collection(collectionName)
 	if collection == nil {
-		if err = db.CreateCollection(context.TODO(), collectionName); err != nil {
-			return err
-		}
+		return errors.New("collection not found")
 	}
 
-	_, err = collection.InsertOne(context.TODO(), data)
+	_, err := collection.InsertOne(context.TODO(), data)
 	if err != nil {
 		return err
 	}
@@ -79,19 +73,13 @@ func InsertOne(collectionName string, data interface{}) error {
 	return nil
 }
 
-func UpdateOne(collectionName string, filter interface{}, update interface{}) error {
-	client, err := mongo.Connect(options.Client().ApplyURI(HOST))
-	if err != nil {
-		return err
-	}
-
-	db := client.Database(DB)
-	collection := db.Collection(collectionName)
+func (m *Mongo) UpdateOne(collectionName string, filter interface{}, update interface{}) error {
+	collection := m.db.Collection(collectionName)
 	if collection == nil {
 		return errors.New("collection not found")
 	}
 
-	_, err = collection.UpdateOne(context.TODO(), filter, update)
+	_, err := collection.UpdateOne(context.TODO(), filter, update)
 	if err != nil {
 		return err
 	}
@@ -99,22 +87,20 @@ func UpdateOne(collectionName string, filter interface{}, update interface{}) er
 	return nil
 }
 
-func DeleteOne(collectionName string, filter interface{}) error {
-	client, err := mongo.Connect(options.Client().ApplyURI(HOST))
-	if err != nil {
-		return err
-	}
-
-	db := client.Database(DB)
-	collection := db.Collection(collectionName)
+func (m *Mongo) DeleteOne(collectionName string, filter interface{}) error {
+	collection := m.db.Collection(collectionName)
 	if collection == nil {
 		return errors.New("collection not found")
 	}
 
-	_, err = collection.DeleteOne(context.TODO(), filter)
+	_, err := collection.DeleteOne(context.TODO(), filter)
 	if err != nil {
 		return err
 	}
 
 	return nil
+}
+
+func (m *Mongo) Close() error {
+	return m.client.Disconnect(context.TODO())
 }

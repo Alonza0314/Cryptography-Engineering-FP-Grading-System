@@ -4,6 +4,7 @@ import (
 	"ce/backend/api"
 	"ce/backend/factory"
 	logger "ce/backend/logger"
+	"ce/backend/mongo"
 	"context"
 	"fmt"
 	"net/http"
@@ -42,14 +43,21 @@ func main() {
 	var err error
 
 	ceCfg, err := factory.LoadCeCfg("config/ceCfg.yaml")
-    if err != nil {
-        panic(fmt.Sprintf("Failed to load ceCfg: %v", err))
-    }
+	if err != nil {
+		panic(fmt.Sprintf("Failed to load ceCfg: %v", err))
+	}
 	factory.CeConfig = ceCfg
 
 	Logger = logger.NewLogger(ceCfg.Logger.FileDir+"/"+time.Now().Format("2006-01-02")+".log", ceCfg.Logger.DebugMode)
 	api.Log = Logger
 	Logger.Kuromi()
+
+	db, err := mongo.NewMongo()
+	if err != nil {
+		panic(fmt.Sprintf("Failed to connect to MongoDB: %v", err))
+	}
+	api.Db = db
+	defer api.Db.Close()
 
 	router := api.NewRouter()
 	srv := &http.Server{
