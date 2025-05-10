@@ -56,6 +56,12 @@ func addRoutes(router *gin.Engine) {
 
 var routes = []route{
 	{
+		Name: "Admin Login",
+		Method: http.MethodPost,
+		Pattern: "/admin/login",
+		HandlerFunc: ApiAdminLogin,
+	},
+	{
 		Name:        "User Login",
 		Method:      http.MethodPost,
 		Pattern:     "/user/login",
