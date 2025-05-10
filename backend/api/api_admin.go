@@ -4,6 +4,7 @@ import (
 	"ce/backend/factory"
 	"ce/backend/model"
 	"ce/backend/util"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -103,6 +104,95 @@ func ApiAdminDeleteBigGroup(c *gin.Context) {
 	handleAdminDeleteBigGroup(c, request)
 
 	Log.Info("API ADMIN", "delete big group end")
+}
+
+func ApiAdminGetGroups(c *gin.Context) {
+	Log.Info("API ADMIN", "get groups start")
+
+	jwtToken := c.GetHeader("Authorization")
+	if jwtToken == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "missing authorization header",
+		})
+		return
+	}
+	valid, _, err := util.VerifyJwtToken(jwtToken)
+	if err != nil || !valid {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "invalid token",
+		})
+		return
+	}
+
+	var request model.AdminGetGroupsRequest
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	handleAdminGetGroups(c, request)
+
+	Log.Info("API ADMIN", "get groups end")
+}
+
+func ApiAdminAddGroup(c *gin.Context) {
+	Log.Info("API ADMIN", "add group start")
+
+	jwtToken := c.GetHeader("Authorization")
+	if jwtToken == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "missing authorization header",
+		})
+		return
+	}
+	valid, _, err := util.VerifyJwtToken(jwtToken)
+	if err != nil || !valid {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "invalid token",
+		})
+		return
+	}
+
+	var request model.AdminAddGroupRequest
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	fmt.Println(request)
+
+	handleAdminAddGroup(c, request)
+
+	Log.Info("API ADMIN", "add group end")
+}
+
+func ApiAdminDeleteGroup(c *gin.Context) {
+	Log.Info("API ADMIN", "delete group start")
+
+	jwtToken := c.GetHeader("Authorization")
+	if jwtToken == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "missing authorization header",
+		})
+		return
+	}
+	valid, _, err := util.VerifyJwtToken(jwtToken)
+	if err != nil || !valid {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "invalid token",
+		})
+		return
+	}
+
+	var request model.AdminDeleteGroupRequest
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	handleAdminDeleteGroup(c, request)
+
+	Log.Info("API ADMIN", "delete group end")
 }
 
 func handleAdminLogin(c *gin.Context, request model.AdminLoginRequest) {
@@ -205,4 +295,76 @@ func handleAdminDeleteBigGroup(c *gin.Context, request model.AdminDeleteBigGroup
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "big group deleted successfully"})
+}
+
+func handleAdminGetGroups(c *gin.Context, request model.AdminGetGroupsRequest) {
+	bigGroup := request.BigGroup
+	groups, err := GetGroups(bigGroup)
+	if err != nil {
+		Log.Error("API ADMIN", "failed to get groups: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	response := model.AdminGetGroupsResponse{
+		Groups: make([]model.Group, len(groups)),
+	}
+	for i, group := range groups {
+		response.Groups[i] = *group
+	}
+
+	c.JSON(http.StatusOK, response)
+}
+
+func handleAdminAddGroup(c *gin.Context, request model.AdminAddGroupRequest) {
+	group, err := GetGroup(request.BigGroup, request.GroupId)
+	if err != nil {
+		Log.Error("API ADMIN", "failed to get group: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	if group != nil {
+		Log.Error("API ADMIN", "group already exists")
+		c.JSON(http.StatusBadRequest, gin.H{"error": "group already exists"})
+		return
+	}
+
+	if err = InsertGroup(&model.Group{
+		BigGroup:        request.BigGroup,
+		GroupId:         request.GroupId,
+		GroupName:       request.GroupName,
+		LeaderName:      request.LeaderName,
+		LeaderStudentId: request.LeaderStudentId,
+		Members:         request.Members,
+	}); err != nil {
+		Log.Error("API ADMIN", "failed to insert group: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "group added successfully"})
+}
+
+func handleAdminDeleteGroup(c *gin.Context, request model.AdminDeleteGroupRequest) {
+	group, err := GetGroup(request.BigGroup, request.GroupId)
+	if err != nil {
+		Log.Error("API ADMIN", "failed to get group: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	if group == nil {
+		Log.Error("API ADMIN", "group not found")
+		c.JSON(http.StatusNotFound, gin.H{"error": "group not found"})
+		return
+	}
+
+	if err = DeleteGroup(request.BigGroup, request.GroupId); err != nil {
+		Log.Error("API ADMIN", "failed to delete group: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "group deleted successfully"})
 }

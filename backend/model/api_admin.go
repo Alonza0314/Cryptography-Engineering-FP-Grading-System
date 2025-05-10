@@ -1,7 +1,7 @@
 package model
 
 type AdminLoginRequest struct {
-	TaId     string `json:"ta_id" binding:"required"`
+	TaId       string `json:"ta_id" binding:"required"`
 	TaPassword string `json:"ta_password" binding:"required"`
 }
 
@@ -19,4 +19,21 @@ type AdminAddBigGroupRequest struct {
 
 type AdminDeleteBigGroupRequest struct {
 	BigGroup string `json:"big_group" binding:"required"`
+}
+
+type AdminGetGroupsRequest struct {
+	BigGroup string `json:"big_group" binding:"required"`
+}
+
+type AdminGetGroupsResponse struct {
+	Groups []Group `json:"groups" binding:"required"`
+}
+
+type AdminAddGroupRequest struct {
+	Group
+}
+
+type AdminDeleteGroupRequest struct {
+	BigGroup string `json:"big_group" binding:"required"`
+	GroupId  int    `json:"group_id" binding:"required"`
 }
