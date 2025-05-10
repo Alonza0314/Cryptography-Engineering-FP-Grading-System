@@ -7,6 +7,7 @@ type Group struct {
 	LeaderName      string   `bson:"leader_name" json:"leader_name" binding:"required"`
 	LeaderStudentId string   `bson:"leader_student_id" json:"leader_student_id" binding:"required"`
 	Members         []Member `bson:"members" json:"members" binding:"required"`
+	GradedStudentId map[string]bool `bson:"graded_student_id" json:"graded_student_id"`
 }
 
 type Member struct {

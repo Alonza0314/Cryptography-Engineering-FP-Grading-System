@@ -4,7 +4,6 @@ import (
 	"ce/backend/factory"
 	"ce/backend/model"
 	"ce/backend/util"
-	"fmt"
 	"net/http"
 	"time"
 
@@ -158,8 +157,6 @@ func ApiAdminAddGroup(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-
-	fmt.Println(request)
 
 	handleAdminAddGroup(c, request)
 
@@ -337,6 +334,7 @@ func handleAdminAddGroup(c *gin.Context, request model.AdminAddGroupRequest) {
 		LeaderName:      request.LeaderName,
 		LeaderStudentId: request.LeaderStudentId,
 		Members:         request.Members,
+		GradedStudentId: make(map[string]bool),
 	}); err != nil {
 		Log.Error("API ADMIN", "failed to insert group: "+err.Error())
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
