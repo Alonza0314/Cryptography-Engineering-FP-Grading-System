@@ -62,6 +62,24 @@ var routes = []route{
 		HandlerFunc: ApiAdminLogin,
 	},
 	{
+		Name: "Admin Get Big Groups",
+		Method: http.MethodGet,
+		Pattern: "/admin/group/big",
+		HandlerFunc: ApiAdminGetBigGroups,
+	},
+	{
+		Name: "Admin Add Big Group",
+		Method: http.MethodPost,
+		Pattern: "/admin/group/big",
+		HandlerFunc: ApiAdminAddBigGroup,
+	},
+	{
+		Name: "Admin Delete Big Group",
+		Method: http.MethodDelete,
+		Pattern: "/admin/group/big",
+		HandlerFunc: ApiAdminDeleteBigGroup,
+	},
+	{
 		Name:        "User Login",
 		Method:      http.MethodPost,
 		Pattern:     "/user/login",

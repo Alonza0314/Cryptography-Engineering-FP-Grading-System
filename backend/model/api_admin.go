@@ -8,3 +8,15 @@ type AdminLoginRequest struct {
 type AdminLoginResponse struct {
 	JwtToken string `json:"jwt_token" binding:"required"`
 }
+
+type AdminGetBigGroupsResponse struct {
+	BigGroups []string `json:"big_groups" binding:"required"`
+}
+
+type AdminAddBigGroupRequest struct {
+	BigGroup string `json:"big_group" binding:"required"`
+}
+
+type AdminDeleteBigGroupRequest struct {
+	BigGroup string `json:"big_group" binding:"required"`
+}
