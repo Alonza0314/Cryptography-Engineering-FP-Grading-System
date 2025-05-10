@@ -160,6 +160,35 @@ func ApiUserGetGroups(c *gin.Context) {
 	Log.Info("API USER", "get groups end")
 }
 
+func ApiUserAddGroupGrade(c *gin.Context) {
+	Log.Info("API USER", "add group grade start")
+
+	jwtToken := c.GetHeader("Authorization")
+	if jwtToken == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "missing authorization header",
+		})
+		return
+	}
+	valid, studentId, err := util.VerifyJwtToken(jwtToken)
+	if err != nil || !valid {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "invalid token",
+		})
+		return
+	}
+
+	var request model.UserAddGroupGradeRequest
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	handleUserAddGroupGrade(c, studentId, request)
+
+	Log.Info("API USER", "add group grade end")
+}
+
 func handleUserLogin(c *gin.Context, request model.UserLoginRequest) {
 	userAccount, err := GetUserAccount(request.StudentId)
 	if err != nil {
@@ -391,4 +420,38 @@ func handleUserGetGroups(c *gin.Context, bigGroup string) {
 	}
 
 	c.JSON(http.StatusOK, response)
+}
+
+func handleUserAddGroupGrade(c *gin.Context, studentId string, request model.UserAddGroupGradeRequest) {
+	groupGradeCommentItem := &model.GroupGradeCommentItem{
+		StudentId: studentId,
+		Grade:     request.Grade,
+		Comment:   request.Comment,
+	}
+
+	group, err := GetGroup(request.BigGroup, request.GroupId)
+	if err != nil {
+		Log.Error("API USER", "failed to get group: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+	if group.GradedStudentId[studentId] {
+		Log.Error("API USER", "already graded")
+		c.JSON(http.StatusBadRequest, gin.H{"error": "already graded"})
+		return
+	}
+
+	if err := UpdateGroupGradeComment(request.BigGroup, request.GroupId, groupGradeCommentItem); err != nil {
+		Log.Error("API USER", "failed to update group grade comment: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	if err := UpdateGroupGradedStudentId(request.BigGroup, request.GroupId, studentId); err != nil {
+		Log.Error("API USER", "failed to update group graded student id: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "grade added successfully"})
 }

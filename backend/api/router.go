@@ -133,4 +133,10 @@ var routes = []route{
 		Pattern:     "/user/group",
 		HandlerFunc: ApiUserGetGroups,
 	},
+	{
+		Name:        "User Add Group Grade",
+		Method:      http.MethodPost,
+		Pattern:     "/user/group/grade",
+		HandlerFunc: ApiUserAddGroupGrade,
+	},
 }

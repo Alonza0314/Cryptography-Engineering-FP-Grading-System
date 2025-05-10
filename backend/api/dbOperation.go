@@ -152,6 +152,16 @@ func GetGroup(bigGroupName string, groupId int) (*model.Group, error) {
 	return &group, nil
 }
 
+func UpdateGroupGradedStudentId(bigGroupName string, groupId int, studentId string) error {
+	return Db.UpdateOne(
+		mongo.GROUP_COLLECTION,
+		bson.M{"big_group": bigGroupName, "group_id": groupId},
+		bson.M{"$set": bson.M{
+			"graded_student_id." + studentId: true,
+		}},
+	)
+}
+
 func InsertGroup(group *model.Group) error {
 	return Db.InsertOne(mongo.GROUP_COLLECTION, group)
 }
@@ -162,6 +172,14 @@ func DeleteGroup(bigGroupName string, groupId int) error {
 
 func InsertGroupGradeComment(groupGradeComment *model.GroupGradeComment) error {
 	return Db.InsertOne(mongo.GROUP_GRADE_COMMENT_COLLECTION, groupGradeComment)
+}
+
+func UpdateGroupGradeComment(bigGroupName string, groupId int, commentItem *model.GroupGradeCommentItem) error {
+	return Db.UpdateOne(
+		mongo.GROUP_GRADE_COMMENT_COLLECTION,
+		bson.M{"big_group": bigGroupName, "group_id": groupId},
+		bson.M{"$push": bson.M{"group_grade_comment_list": commentItem}},
+	)
 }
 
 func DeleteGroupGradeComment(bigGroupName string, groupId int) error {

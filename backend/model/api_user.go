@@ -9,8 +9,8 @@ type UserLoginResponse struct {
 }
 
 type UserTOTPInitBeginResponse struct {
-	QrCode     string `json:"qr_code" binding:"required"`
-	SecretKey  string `json:"secret_key" binding:"required"`
+	QrCode    string `json:"qr_code" binding:"required"`
+	SecretKey string `json:"secret_key" binding:"required"`
 }
 
 type UserTOTPInitFinishRequest struct {
@@ -35,4 +35,11 @@ type UserGetGroupsRequest struct {
 
 type UserGetGroupsResponse struct {
 	Groups []Group `json:"groups" binding:"required"`
+}
+
+type UserAddGroupGradeRequest struct {
+	BigGroup string `json:"big_group" binding:"required"`
+	GroupId  int    `json:"group_id" binding:"required"`
+	Grade    int    `json:"grade" binding:"required"`
+	Comment  string `json:"comment" binding:"required"`
 }
