@@ -82,14 +82,8 @@ var routes = []route{
 	{
 		Name:        "Admin Get Groups",
 		Method:      http.MethodGet,
-		Pattern:     "/admin/groups",
-		HandlerFunc: ApiAdminGetGroups,
-	},
-	{
-		Name:        "Admin Get Group",
-		Method:      http.MethodGet,
 		Pattern:     "/admin/group",
-		HandlerFunc: ApiAdminGetGroup,
+		HandlerFunc: ApiAdminGetGroups,
 	},
 	{
 		Name:        "Admin Add Group",
@@ -102,6 +96,12 @@ var routes = []route{
 		Method:      http.MethodDelete,
 		Pattern:     "/admin/group",
 		HandlerFunc: ApiAdminDeleteGroup,
+	},
+	{
+		Name:        "Admin Get Group Grades",
+		Method:      http.MethodGet,
+		Pattern:     "/admin/group/grade",
+		HandlerFunc: ApiAdminGetGroupGrades,
 	},
 	{
 		Name:        "User Login",

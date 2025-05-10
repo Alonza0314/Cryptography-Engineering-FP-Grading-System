@@ -134,35 +134,6 @@ func ApiAdminGetGroups(c *gin.Context) {
 	Log.Info("API ADMIN", "get groups end")
 }
 
-func ApiAdminGetGroup(c *gin.Context) {
-	Log.Info("API ADMIN", "get group start")
-
-	jwtToken := c.GetHeader("Authorization")
-	if jwtToken == "" {
-		c.JSON(http.StatusUnauthorized, gin.H{
-			"error": "missing authorization header",
-		})
-		return
-	}
-	valid, _, err := util.VerifyJwtToken(jwtToken)
-	if err != nil || !valid {
-		c.JSON(http.StatusUnauthorized, gin.H{
-			"error": "invalid token",
-		})
-		return
-	}
-
-	var request model.AdminGetGroupRequest
-	if err := c.ShouldBindJSON(&request); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-		return
-	}
-
-	handleAdminGetGroup(c, request)
-
-	Log.Info("API ADMIN", "get group end")
-}
-
 func ApiAdminAddGroup(c *gin.Context) {
 	Log.Info("API ADMIN", "add group start")
 
@@ -219,6 +190,35 @@ func ApiAdminDeleteGroup(c *gin.Context) {
 	handleAdminDeleteGroup(c, request)
 
 	Log.Info("API ADMIN", "delete group end")
+}
+
+func ApiAdminGetGroupGrades(c *gin.Context) {
+	Log.Info("API ADMIN", "get group start")
+
+	jwtToken := c.GetHeader("Authorization")
+	if jwtToken == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "missing authorization header",
+		})
+		return
+	}
+	valid, _, err := util.VerifyJwtToken(jwtToken)
+	if err != nil || !valid {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "invalid token",
+		})
+		return
+	}
+
+	var request model.AdminGetGroupGradesRequest
+	if err := c.ShouldBindJSON(&request); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	handleAdminGetGroupGrades(c, request)
+
+	Log.Info("API ADMIN", "get group end")
 }
 
 func handleAdminLogin(c *gin.Context, request model.AdminLoginRequest) {
@@ -342,21 +342,6 @@ func handleAdminGetGroups(c *gin.Context, request model.AdminGetGroupsRequest) {
 	c.JSON(http.StatusOK, response)
 }
 
-func handleAdminGetGroup(c *gin.Context, request model.AdminGetGroupRequest) {
-	groupGradeComment, err := GetGroupGradeComment(request.BigGroup, request.GroupId)
-	if err != nil {
-		Log.Error("API ADMIN", "failed to get group grade comment: "+err.Error())
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-		return
-	}
-
-	response := model.AdminGetGroupResponse{
-		GroupGradeCommentList: groupGradeComment.GroupGradeCommentList,
-	}
-
-	c.JSON(http.StatusOK, response)
-}
-
 func handleAdminAddGroup(c *gin.Context, request model.AdminAddGroupRequest) {
 	group, err := GetGroup(request.BigGroup, request.GroupId)
 	if err != nil {
@@ -425,4 +410,19 @@ func handleAdminDeleteGroup(c *gin.Context, request model.AdminDeleteGroupReques
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "group deleted successfully"})
+}
+
+func handleAdminGetGroupGrades(c *gin.Context, request model.AdminGetGroupGradesRequest) {
+	groupGradeComment, err := GetGroupGradeComment(request.BigGroup, request.GroupId)
+	if err != nil {
+		Log.Error("API ADMIN", "failed to get group grade comment: "+err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	response := model.AdminGetGroupGradesResponse{
+		GroupGradeCommentList: groupGradeComment.GroupGradeCommentList,
+	}
+
+	c.JSON(http.StatusOK, response)
 }
