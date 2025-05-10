@@ -16,5 +16,10 @@ type GinCfg struct {
 }
 
 type AdminCfg struct {
-	Ta []string `yaml:"ta" binding:"required"`
+	Ta []TA `yaml:"ta" binding:"required"`
+}
+
+type TA struct {
+	TaId     string `yaml:"ta_id" binding:"required"`
+	TaPassword string `yaml:"ta_password" binding:"required"`
 }
