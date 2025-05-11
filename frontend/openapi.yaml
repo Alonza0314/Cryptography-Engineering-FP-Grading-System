@@ -1,0 +1,640 @@
+openapi: 3.0.0
+info:
+  title: CE API
+  version: 1.0.0
+  description: CE API documentation
+
+servers:
+  - url: http://{BASE_URL}
+    variables:
+      BASE_URL:
+        default: ce.alonza.xyz:31413
+        description: API server address
+
+paths:
+  /api/admin/login:
+    post:
+      tags:
+        - Admin
+      summary: Admin Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ta_id:
+                  type: string
+                  example: "123456789"
+                ta_password:
+                  type: string
+                  example: "123456789"
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jwt_token:
+                    type: string
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/admin/group:
+    get:
+      tags:
+        - Admin
+      summary: Get Admin Group Information
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: query
+          name: big_group
+          schema:
+            type: string
+          required: true
+          example: "taGroup"
+      responses:
+        '200':
+          description: Successfully retrieved group information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  groups:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        big_group:
+                          type: string
+                        group_id:
+                          type: integer
+                        group_name:
+                          type: string
+                        leader_name:
+                          type: string
+                        leader_student_id:
+                          type: string
+                        members:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              member_name:
+                                type: string
+                              member_student_id:
+                                type: string
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+    post:
+      tags:
+        - Admin
+      summary: Add Group
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                big_group:
+                  type: string
+                  example: "taGroup"
+                group_id:
+                  type: integer
+                  example: 1
+                group_name:
+                  type: string
+                  example: "dfsyc"
+                leader_name:
+                  type: string
+                  example: "df"
+                leader_student_id:
+                  type: string
+                  example: "313581047"
+                members:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      member_name:
+                        type: string
+                        example: "syc"
+                      member_student_id:
+                        type: string
+                        example: "313551121"
+      responses:
+        '200':
+          description: Group added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "group added successfully"
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+    delete:
+      tags:
+        - Admin
+      summary: Delete Group
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                big_group:
+                  type: string
+                  example: "taGroup"
+                group_id:
+                  type: integer
+                  example: 1
+      responses:
+        '200':
+          description: Group deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "group deleted successfully"
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+  /api/user/login:
+    post:
+      tags:
+        - User
+      summary: User Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                student_id:
+                  type: string
+                  example: "123456789"
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jwt_token:
+                    type: string
+        '400':
+          $ref: '#/components/responses/Error400'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+  /api/user/totp/init/begin:
+    get:
+      tags:
+        - User
+      summary: Begin TOTP Initialization
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: TOTP initialization started successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  qr_code:
+                    type: string
+        '401':
+          $ref: '#/components/responses/Error401'
+        '404':
+          $ref: '#/components/responses/Error404'
+
+  /api/user/totp:
+    post:
+      tags:
+        - User
+      summary: Verify TOTP Code
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  example: "780830"
+      responses:
+        '200':
+          description: TOTP verification successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jwt_token:
+                    type: string
+        '404':
+          $ref: '#/components/responses/Error404'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+  /api/admin/group/big:
+    get:
+      tags:
+        - Admin
+      summary: Get Big Groups
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Successfully retrieved big groups
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  big_groups:
+                    type: array
+                    items:
+                      type: string
+        '401':
+          $ref: '#/components/responses/Error401'
+        '500':
+          $ref: '#/components/responses/Error500'
+    
+    post:
+      tags:
+        - Admin
+      summary: Add Big Group
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                big_group:
+                  type: string
+                  example: "taGroup"
+      responses:
+        '200':
+          description: Big group added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '401':
+          $ref: '#/components/responses/Error401'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+    delete:
+      tags:
+        - Admin
+      summary: Delete Big Group
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                big_group:
+                  type: string
+                  example: "taGroup"
+      responses:
+        '200':
+          description: Big group deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+  /api/admin/group/grade:
+    get:
+      tags:
+        - Admin
+      summary: Get Group Grades
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                big_group:
+                  type: string
+                  example: "taGroup"
+                group_id:
+                  type: integer
+                  example: 1
+      responses:
+        '200':
+          description: Successfully retrieved group grades
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  group_grade_comment_list:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        student_id:
+                          type: string
+                        grade:
+                          type: integer
+                        comment:
+                          type: string
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+  /api/user/group/big:
+    get:
+      tags:
+        - User
+      summary: Get User Big Groups
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Successfully retrieved user big groups
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  big_groups:
+                    type: array
+                    items:
+                      type: string
+        '401':
+          $ref: '#/components/responses/Error401'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+  /api/user/group:
+    get:
+      tags:
+        - User
+      summary: Get User Groups
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                big_group:
+                  type: string
+                  example: "taGroup"
+      responses:
+        '200':
+          description: Successfully retrieved user groups
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  groups:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        big_group:
+                          type: string
+                        group_id:
+                          type: integer
+                        group_name:
+                          type: string
+                        leader_name:
+                          type: string
+                        leader_student_id:
+                          type: string
+                        members:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              member_name:
+                                type: string
+                              member_student_id:
+                                type: string
+                        graded_student_id:
+                          type: object
+                          description: "Map of student IDs who have graded"
+                          additionalProperties:
+                            type: boolean
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+  /api/user/group/grade:
+    post:
+      tags:
+        - User
+      summary: Add Group Grade
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                big_group:
+                  type: string
+                  example: "taGroup"
+                group_id:
+                  type: integer
+                  example: 1
+                grade:
+                  type: integer
+                  example: 99
+                comment:
+                  type: string
+                  example: "very good"
+      responses:
+        '200':
+          description: Grade added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '500':
+          $ref: '#/components/responses/Error500'
+
+  /api/user/totp/init/finish:
+    post:
+      tags:
+        - User
+      summary: Finish TOTP Initialization
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  example: "661644"
+      responses:
+        '200':
+          description: TOTP initialization completed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '404':
+          $ref: '#/components/responses/Error404'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  responses:
+    Error400:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "string"
+
+    Error401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+
+    Error404:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+
+    Error500:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string

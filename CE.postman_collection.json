@@ -1,0 +1,4301 @@
+{
+	"info": {
+		"_postman_id": "67627b5b-dbb8-4933-9013-77de265e3b9e",
+		"name": "CE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38955132"
+	},
+	"item": [
+		{
+			"name": "AdminLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ta_id\": \"313581047\",\r\n    \"ta_password\": \"df00331144\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/admin/login",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ta_id\": \"313581047\",\r\n    \"ta_password\": \"df00331144\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:20:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwt_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623\"\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ta_id\": \"313581047\",\r\n    \"ta_password\": \"df00331144\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:20:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ta_id\": \"313581047\",\r\n    \"ta_password\": \"df00331144\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:20:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "404",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ta_id\": \"313581047\",\r\n    \"ta_password\": \"df00331144\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:20:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ta_id\": \"313581047\",\r\n    \"ta_password\": \"df00331144\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:20:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AdminBigGroupGet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/admin/group/big",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"group",
+						"big"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:47:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"big_groups\": [\n        \"taGroup\",\n        \"tataGroup\"\n    ]\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:47:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:47:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AdminBigGroupAdd",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/admin/group/big",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"group",
+						"big"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:57:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"big group added successfully\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:57:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 20:57:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AdminBigGroupDelete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"big_group\": \"tataGroup\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/admin/group/big",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"group",
+						"big"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"tataGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:04:56 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"big group deleted successfully\"\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"tataGroup2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:05:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"tataGroup2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:05:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "404",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"tataGroup2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:05:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"tataGroup2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:05:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AdminGroupsGet",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/admin/group",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"group"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:58:47 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"groups\": [\n        {\n            \"big_group\": \"taGroup\",\n            \"group_id\": 1,\n            \"group_name\": \"dfsyc\",\n            \"leader_name\": \"df\",\n            \"leader_student_id\": \"313581047\",\n            \"members\": [\n                {\n                    \"member_name\": \"syc\",\n                    \"member_student_id\": \"313551121\"\n                }\n            ]\n        }\n    ]\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:58:47 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:58:47 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:58:47 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AdminGroupAdd",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1,\r\n    \"group_name\": \"dfsyc\",\r\n    \"leader_name\": \"df\",\r\n    \"leader_student_id\": \"313581047\",\r\n    \"members\": [\r\n        {\r\n            \"member_name\": \"syc\",\r\n            \"member_student_id\": \"313551121\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/admin/group",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"group"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1,\r\n    \"group_name\": \"dfsyc\",\r\n    \"leader_name\": \"df\",\r\n    \"leader_student_id\": \"313581047\",\r\n    \"members\": [\r\n        {\r\n            \"member_name\": \"syc\",\r\n            \"member_student_id\": \"313551121\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:41:04 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"group added successfully\"\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1,\r\n    \"group_name\": \"dfsyc\",\r\n    \"leader_name\": \"df\",\r\n    \"leader_student_id\": \"313581047\",\r\n    \"members\": [\r\n        {\r\n            \"member_name\": \"syc\",\r\n            \"member_student_id\": \"313551121\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:41:04 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1,\r\n    \"group_name\": \"dfsyc\",\r\n    \"leader_name\": \"df\",\r\n    \"leader_student_id\": \"313581047\",\r\n    \"members\": [\r\n        {\r\n            \"member_name\": \"syc\",\r\n            \"member_student_id\": \"313551121\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:41:04 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1,\r\n    \"group_name\": \"dfsyc\",\r\n    \"leader_name\": \"df\",\r\n    \"leader_student_id\": \"313581047\",\r\n    \"members\": [\r\n        {\r\n            \"member_name\": \"syc\",\r\n            \"member_student_id\": \"313551121\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:41:04 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AdminGroupDelete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/admin/group",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"group"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:42:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"group deleted successfully\"\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:42:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:42:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "404",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:42:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 21:42:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AdminGroupGradesGet",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/admin/group/grade",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"group",
+						"grade"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/grade",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"grade"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 23:41:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"group_grade_comment_list\": [\n        {\n            \"student_id\": \"123456789\",\n            \"grade\": 99,\n            \"comment\": \"very good\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/grade",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"grade"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 23:41:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/grade",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"grade"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 23:41:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNjQyMCwiaW9hIjoxNzQ2OTA4NDIwLCJzdHVkZW50X2lkIjoiMzEzNTgxMDQ3In0.IpJ6hrZG9FKZVSvWVP4mqLc4ob55q1LE61GtoJWAC1c95a2e7b89aa8c7586c6308bfb08edd8c691f439d73afaf09547be7f3e1765623",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/admin/group/grade",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"group",
+								"grade"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 23:41:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"student_id\": \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/user/login",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student_id\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/login",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 May 2025 13:13:13 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "269"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwt_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcwOTYzOTMsImlvYSI6MTc0Njc5NjM5Mywic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.wsb_1R7TIPfwGoJs94UhIOzzLvw0yMk3y19eHnNYxK4bff1727c2117fc607fc55f3339e5d6c96e737cfe9a57a7446df4aa367b9fddde\"\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student_id\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/login",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 May 2025 13:13:13 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "269"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"student_id\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/login",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 May 2025 13:13:13 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "269"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UserTotpInitBegin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcyMDM5ODUsImlvYSI6MTc0NjkwMzk4NSwic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.swQpBzwpLnoPc4UO2Rp8_XGy-795pZTk51e90mH8yWw26e65d822fe13e798ef7a9d57dfd149fa17bdacf29b87d4a74f9e3443f102973",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/user/totp/init/begin",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"totp",
+						"init",
+						"begin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcyMDM4MjIsImlvYSI6MTc0NjkwMzgyMiwic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.IXQ3Vu0C3zOMSvOUoarwnTs9LsXEeHc25_mZoI-acrMa08721a65af2aaf333414fbb64001f4e54b0837e835bd396bff12464aacbe30e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp/init/begin",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp",
+								"init",
+								"begin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:04:07 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"qr_code\": \"iVBORw0KGgoAAAANSUhEUgAAAMgAAADIEAAAAADYoy0BAAAGZklEQVR4nOyd4W7zNgxFm6Hv/8rf0AEeYk00eSkWuwHO+VEgiSQrvZBoiqTz/efPFxjx1/89Abjz/fPn9ep1XlfXNU531a3913ll42b9M6Lxs3mcXvd9XFaIGQhiBoKY8f3+orr3Z3tkdw9d+0d79cX6uWq7qu1X21D9fp3/JyvEDAQxA0HM+N69Ge2R2X36utdW79err1Wbos5/badeP0L5f7JCzEAQMxDEjK0N6XLqf2R+xenZVGQrsnbT/s8TrBAzEMQMBDFj1IasdOMZ09ebtj1RuwlYIWYgiBkIYsbWhnT3xm4sPLt+9axsbT89btQvQ/n+rBAzEMQMBDHjZkNO/YCVbtxD3aNP21evH9nIag5ABVaIGQhiBoKY8Y8NmT6TqcbeM6bzn7LxM//lt+fzxQrxA0HMQBAzXj/7Xbe+oWsLTs+kqqh5XGp9yqn/QV7WB4AgZiCIGa/3faxbl5G1q54dRZzGParzPG2vfv/deKwQMxDEDAQx41anXq2vyNqrcYPqfXzVL8jad/0e1Saq35c6dUMQxAwEMePRD1H37IhTf+Q0tq7GOdQzq64/tRuXFWIGgpiBIGZI9SFqXKPqT6zjVfurdfHVcarXPZ3Prj0rxAwEMQNBzNg+L+v0vlut8z4948rGqfohUzH2aF6V+bJCzEAQMxDEjG1e1r8fHuZnTd+3R0zHMaL+2fXUnN6dTWKFmIEgZiCIGaW8rPJgTZuj5j1N1Z9UOfVj1vbr5/ghxiCIGQhixjYvS70/V+/Ls7iKGqvu2o5uTHwqbrKDFWIGgpiBIGa0nrmoxi3Ueoy1XzXnOOvfrXVU57O2j+ZJTP0DQBAzEMSMx2cudvOwqv5MtyYx6h99j+r3OqX6/Z/8HlaIGQhiBoKYIf0G1UW0J6o2IBs/eh29n9moaP7V8Vay7x+1e4IVYgaCmIEgZtyeudjdc6vvX0yNE81TpWvbLjIbocTaWSFmIIgZCGLGNi/roluzF/UPJyGeaa10rxNR3fNP50de1geAIGYgiBmPNqRLN+e1m/+lziuiG59R5/Vkm1khZiCIGQhiRul3DFX/Q63Xjq7fzaNSz9Ci8dW4jjqfXT9WiBkIYgaCmHGrD1lR6x8uqrm4VX+kWx/SzdXN6kC6tY4Vv4YVYgaCmIEgZmxj6tW6ipVOTd1u/Ow6atxFfYZJtx4l+7zi17BCzEAQMxDEjMc69ZXqWVTVb7jo+gtT+VrqmVX3/4Mf8oEgiBkIYkbp99S7Oa1RO/X1Ok40v+rZW1TXkaHaiPX9ymtWiBkIYgaCmLH1Q7o24UKNvZ/m7lbr5qv9uuN3Y/n4IcYgiBkIYsbt2e8X1b146ozpdJx1vIjT+hXVL+pcnxViBoKYgSBmbG3IRbeWbuosqluf0a1X79YSqn7UUztWiBkIYgaCmCH5IdHna7vq3j7lZ3Tzrrp7fnXczhkZK8QMBDEDQcx4fPZ7tDeq9RjZ+6rfcup3dPOupvyqqB1+iCEIYgaCmPGq7L9qvfhpbPy3+in14l8D+WMdf4UVYgaCmIEgZmzzsi5O/YMINb6g7v1ZO7VmcjpfLBofP8QQBDEDQcx4/P2Qrk3J9t6V07r37nVUf0Kt4++cubFCzEAQMxDEjNZZ1sVpXXc0XtRPjZH/9hlbNk4nZ4AVYgaCmIEgZpTyssLOQ3uymjPcfT9CtYXTtol4iDEIYgaCmFH6HcOLqVxY1WZkZ0rRdbL3u/UgWV1/1j6aB36IIQhiBoKYUfo99epeubbPxo2YqlHszlMdf72Omsf1DivEDAQxA0HMKNWp/6fTUM1hdD01jpCNF81LbTc1H+rUPwgEMQNBzCjF1NNBhuIEXdt0Op/setG4p/MlHvIBIIgZCGLG4+8YZqxnXF2bcWrH1Jzj7vjR9dT4xzof4iHGIIgZCGLGLR7SzcdSbdBULeLFaR5ZRjXWns2n0p8VYgaCmIEgZpRi6hfV+2p1nG7Objd3V52vmj+W8WRLWCFmIIgZCGLG4zMXVU5zg6Nc3gi15jCb12+fuUXjvsMKMQNBzEAQM0ZtyMVUvXm0d1f9lKr/MV0fs7ZXYvCsEDMQxAwEMWNrQ9T77Wzv78a6T/2QDPUZLtVYenW+az9i6oYgiBkIYsbNhnRjzl1/QB1freNQ/YDTZ7CotpezrA8AQcxAEDNG6kNgDlaIGX8HAAD//0FFUeeJ5mSGAAAAAElFTkSuQmCC\",\n    \"secret_key\": \"AKZQ6GL4CNTU3JHVSP72CZMO5TZL6PIY\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcyMDM4MjIsImlvYSI6MTc0NjkwMzgyMiwic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.IXQ3Vu0C3zOMSvOUoarwnTs9LsXEeHc25_mZoI-acrMa08721a65af2aaf333414fbb64001f4e54b0837e835bd396bff12464aacbe30e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp/init/begin",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp",
+								"init",
+								"begin"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:04:07 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcyMDM4MjIsImlvYSI6MTc0NjkwMzgyMiwic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.IXQ3Vu0C3zOMSvOUoarwnTs9LsXEeHc25_mZoI-acrMa08721a65af2aaf333414fbb64001f4e54b0837e835bd396bff12464aacbe30e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp/init/begin",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp",
+								"init",
+								"begin"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:04:07 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UserTotpInitFinish",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcyMDM5ODUsImlvYSI6MTc0NjkwMzk4NSwic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.swQpBzwpLnoPc4UO2Rp8_XGy-795pZTk51e90mH8yWw26e65d822fe13e798ef7a9d57dfd149fa17bdacf29b87d4a74f9e3443f102973",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"661644\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/user/totp/init/finish",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"totp",
+						"init",
+						"finish"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcyMDQ5MTIsImlvYSI6MTc0NjkwNDkxMiwic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.J_0NAMoTAOHmRl_NqWZrAR4R38l7M8xrLjImnGbhFRw026f8b5cb56f08f1e214fad7fda84a1cfe04d5c98fa75e44a3840782759d217f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"620343\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp/init/finish",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp",
+								"init",
+								"finish"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:25:36 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"TOTP initialized\"\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcyMDQ5MTIsImlvYSI6MTc0NjkwNDkxMiwic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.J_0NAMoTAOHmRl_NqWZrAR4R38l7M8xrLjImnGbhFRw026f8b5cb56f08f1e214fad7fda84a1cfe04d5c98fa75e44a3840782759d217f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"620343\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp/init/finish",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp",
+								"init",
+								"finish"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:25:36 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcyMDQ5MTIsImlvYSI6MTc0NjkwNDkxMiwic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.J_0NAMoTAOHmRl_NqWZrAR4R38l7M8xrLjImnGbhFRw026f8b5cb56f08f1e214fad7fda84a1cfe04d5c98fa75e44a3840782759d217f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"620343\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp/init/finish",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp",
+								"init",
+								"finish"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:25:36 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "404",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcyMDQ5MTIsImlvYSI6MTc0NjkwNDkxMiwic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.J_0NAMoTAOHmRl_NqWZrAR4R38l7M8xrLjImnGbhFRw026f8b5cb56f08f1e214fad7fda84a1cfe04d5c98fa75e44a3840782759d217f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"620343\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp/init/finish",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp",
+								"init",
+								"finish"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:25:36 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UserTotp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOmZhbHNlLCJleHAiOjE3NDcyMDM5ODUsImlvYSI6MTc0NjkwMzk4NSwic3R1ZGVudF9pZCI6IjEyMzQ1Njc4OSJ9.swQpBzwpLnoPc4UO2Rp8_XGy-795pZTk51e90mH8yWw26e65d822fe13e798ef7a9d57dfd149fa17bdacf29b87d4a74f9e3443f102973",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"780830\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/user/totp",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"totp"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkwNjc0MywiaW9hIjoxNzQ2OTA2NDQzLCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.PxDFL2k20kPw3f0L9jyTMg_nKLH72CfR6H-g3Tixygk3861668cd215da2c15b89635d55064fbccd128af8d888b5e4acd9ae5739a2d17",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"930512\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:47:57 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwt_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkyNDQ3NywiaW9hIjoxNzQ2OTA2NDc3LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.zFK3H_ynjV2jCn97bF0jlrYpSMIp7Fys1uhAQHMz8Uoe45f98c1c1858d90027e479799d0d245bf0b8a6ede6e8c183f2dccb011c1a0fb\"\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkwNjc0MywiaW9hIjoxNzQ2OTA2NDQzLCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.PxDFL2k20kPw3f0L9jyTMg_nKLH72CfR6H-g3Tixygk3861668cd215da2c15b89635d55064fbccd128af8d888b5e4acd9ae5739a2d17",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"930512\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:47:57 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkwNjc0MywiaW9hIjoxNzQ2OTA2NDQzLCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.PxDFL2k20kPw3f0L9jyTMg_nKLH72CfR6H-g3Tixygk3861668cd215da2c15b89635d55064fbccd128af8d888b5e4acd9ae5739a2d17",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"930512\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:47:57 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "404",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkwNjc0MywiaW9hIjoxNzQ2OTA2NDQzLCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.PxDFL2k20kPw3f0L9jyTMg_nKLH72CfR6H-g3Tixygk3861668cd215da2c15b89635d55064fbccd128af8d888b5e4acd9ae5739a2d17",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"930512\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:47:57 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkwNjc0MywiaW9hIjoxNzQ2OTA2NDQzLCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.PxDFL2k20kPw3f0L9jyTMg_nKLH72CfR6H-g3Tixygk3861668cd215da2c15b89635d55064fbccd128af8d888b5e4acd9ae5739a2d17",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"930512\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/totp",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"totp"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 19:47:57 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UserBigGroupsGet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/user/group/big",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"group",
+						"big"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 22:29:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"big_groups\": [\n        \"taGroup\",\n        \"tataGroup\"\n    ]\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 22:29:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group/big",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group",
+								"big"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 22:29:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UserGroupsGet",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/user/group",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"group"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 22:54:31 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "210"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"groups\": [\n        {\n            \"big_group\": \"taGroup\",\n            \"group_id\": 1,\n            \"group_name\": \"dfsyc\",\n            \"leader_name\": \"df\",\n            \"leader_student_id\": \"313581047\",\n            \"members\": [\n                {\n                    \"member_name\": \"syc\",\n                    \"member_student_id\": \"313551121\"\n                }\n            ],\n            \"graded_student_id\": {}\n        }\n    ]\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 22:32:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 22:32:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 22:32:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UserGroupGradeAdd",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1,\r\n    \"grade\": 99,\r\n    \"comment\": \"very good\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{BASE_URL}}/api/user/group/grade",
+					"protocol": "http",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"group",
+						"grade"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1,\r\n    \"grade\": 99,\r\n    \"comment\": \"very good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group/grade",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group",
+								"grade"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 23:14:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"grade added successfully\"\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1,\r\n    \"grade\": 99,\r\n    \"comment\": \"very good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group/grade",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group",
+								"grade"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 23:14:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1,\r\n    \"grade\": 99,\r\n    \"comment\": \"very good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group/grade",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group",
+								"grade"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 23:14:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				},
+				{
+					"name": "500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbHJlYWR5X3RvdHAiOnRydWUsImV4cCI6MTc0NjkzNDEyNSwiaW9hIjoxNzQ2OTE2MTI1LCJzdHVkZW50X2lkIjoiMTIzNDU2Nzg5In0.A_PpiJhrZPTCJChdky08uHulXS7cR8ImwtiBuzYmm5ob1c362a319be9a8719e848872064bc69c0a07bc6cddf2af59fbabbc6e71c9e98",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"big_group\": \"taGroup\",\r\n    \"group_id\": 1,\r\n    \"grade\": 99,\r\n    \"comment\": \"very good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{BASE_URL}}/api/user/group/grade",
+							"protocol": "http",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"group",
+								"grade"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 May 2025 23:14:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"string\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "df.alonza.xyz:31413",
+			"type": "string"
+		}
+	]
+}
